@@ -2,11 +2,10 @@ import Image from "next/image";
 
 type TimelineEvent = {
   year: string;
-  category: string;
   title: string;
-  whatHappened: string;
-  whyItMatters: string;
-  causeEffect: string;
+  summary: string;
+  impact: string;
+  nextStep: string;
   image: string;
   imageAlt: string;
 };
@@ -14,225 +13,162 @@ type TimelineEvent = {
 const events: TimelineEvent[] = [
   {
     year: "1700s",
-    category: "Agriculture",
-    title: "Agricultural Improvements Prepared Britain for Change",
-    whatHappened:
-      "Before factories grew, farming in Britain got better because of new tools, crop rotation, and better use of land. Farmers could grow more food with fewer workers.",
-    whyItMatters:
-      "These farm changes helped make the Industrial Revolution possible. The population grew, and more people could leave farming and work in other jobs.",
-    causeEffect:
-      "Better farming led to more food and more people. That gave Britain more workers, which helped factories and cities grow.",
+    title: "Better Farming Helped Prepare Britain for Change",
+    summary:
+      "Before factories took over, farming in Britain was already changing. New tools, crop rotation, and better use of land helped farmers grow more food with fewer workers.",
+    impact:
+      "This mattered because a larger food supply helped the population grow. At the same time, fewer people were needed on farms, so more workers became available for jobs in towns and factories.",
+    nextStep:
+      "In other words, farming improvements came first, and they helped create the conditions that made industrial growth possible.",
     image: "/timeline/Jethro Tull seed drill 1762.webp",
-    imageAlt: "Illustration of Jethro Tull seed drill",
+    imageAlt: "Illustration of Jethro Tull's seed drill.",
   },
   {
     year: "1764",
-    category: "Textiles",
-    title: "The Spinning Jenny Increased Textile Production",
-    whatHappened:
-      "James Hargreaves invented the Spinning Jenny, a machine that let one worker spin many threads at one time. This made cloth production much faster.",
-    whyItMatters:
-      "Textiles were one of the first major industries of the Industrial Revolution. This invention showed that machines could make goods faster than hand work.",
-    causeEffect:
-      "As more people wanted cloth, inventors made faster tools. The success of textile machines helped start the factory system.",
+    title: "The Spinning Jenny Sped Up Textile Work",
+    summary:
+      "James Hargreaves invented the Spinning Jenny, a machine that let one person spin several threads at the same time. That made cloth production much faster than it had been before.",
+    impact:
+      "Textiles were one of the first industries to change during the Industrial Revolution. The machine showed that technology could produce goods faster and more cheaply than hand labor.",
+    nextStep:
+      "Once textile machines proved successful, people began looking for more ways to use machines in production.",
     image: "/timeline/Spinning Jenny.webp",
-    imageAlt: "Historical image of a spinning jenny",
+    imageAlt: "A historical image of the Spinning Jenny.",
   },
   {
     year: "1769",
-    category: "Energy",
-    title: "Watt's Steam Engine Made Industry More Powerful",
-    whatHappened:
-      "James Watt improved the steam engine so it worked better than older models. It became useful in factories, mines, and transportation.",
-    whyItMatters:
-      "Steam power meant factories did not have to rely only on rivers or water wheels. Production could grow in more places.",
-    causeEffect:
-      "The need for stronger power led to better steam engines. Steam power then helped factories grow bigger and faster.",
+    title: "Watt's Steam Engine Made Factory Power More Reliable",
+    summary:
+      "James Watt improved the steam engine so it worked better and wasted less energy. Because of that, it became useful in factories, mines, and transportation.",
+    impact:
+      "This was important because factories no longer had to depend only on rivers for power. Steam engines made it easier for industry to spread to more places.",
+    nextStep:
+      "As steam power improved, factories became larger and industrial growth picked up speed.",
     image: "/timeline/Watt-Steam-Engine.webp",
-    imageAlt: "Diagram of a Watt steam engine",
+    imageAlt: "A diagram of a Watt steam engine.",
   },
   {
-    year: "1770s-1800s",
-    category: "Industry",
+    year: "1770s to 1800s",
     title: "Factories Replaced Many Small Workshops",
-    whatHappened:
-      "Work moved out of homes and small shops into large factories where machines and workers were all in one place.",
-    whyItMatters:
-      "This changed the way people worked. Factory owners could make goods faster and cheaper, but workers had less control over their time and conditions.",
-    causeEffect:
-      "New machines worked best when they were gathered in one place, so factories grew. This pulled work away from homes and changed daily life for families.",
+    summary:
+      "Production gradually moved out of homes and small shops and into factories. In those factories, workers and machines were gathered in one place so goods could be made more quickly.",
+    impact:
+      "This changed daily life for workers. Factory owners could produce more goods, but workers often lost control over their pace, hours, and working conditions.",
+    nextStep:
+      "Because machines worked best in central locations, the factory system kept growing and changed the way families earned a living.",
     image: "/timeline/early textile factory 1800s.webp",
-    imageAlt: "Early textile factory interior",
+    imageAlt: "An early textile factory interior.",
   },
   {
     year: "1804",
-    category: "Transportation",
     title: "Steam Locomotives Changed Transportation",
-    whatHappened:
-      "The first successful steam locomotive showed that trains could move goods and people faster than wagons and horses. Railroads spread during the 1800s.",
-    whyItMatters:
-      "Transportation became cheaper, faster, and more dependable. Raw materials could get to factories faster, and finished goods could be sold in more places.",
-    causeEffect:
-      "Industrial growth created a need for better transportation. Railroads then helped industry grow even more by linking mines, factories, ports, and cities.",
+    summary:
+      "Early steam locomotives showed that trains could move goods and people faster than wagons and horses. Railroads then expanded during the 1800s.",
+    impact:
+      "Transportation became faster, cheaper, and more dependable. Raw materials could reach factories more quickly, and finished goods could be sold farther away.",
+    nextStep:
+      "Industrial growth created a need for better transportation, and railroads helped industry expand even more.",
     image: "/timeline/early steam locomotive 1804.webp",
-    imageAlt: "Early steam locomotive illustration",
+    imageAlt: "An early steam locomotive.",
   },
   {
-    year: "1820s-1850s",
-    category: "Urbanization",
-    title: "Urbanization Reshaped Society",
-    whatHappened:
-      "As factories grew, many people moved from villages to cities looking for work. Cities grew fast, often without enough housing or clean water systems.",
-    whyItMatters:
-      "Urban growth changed where and how people lived. It created new jobs and trade, but it also caused overcrowding, pollution, and disease.",
-    causeEffect:
-      "Factory jobs brought workers into cities. Fast city growth then created serious problems, which later pushed governments to make changes.",
+    year: "1820s to 1850s",
+    title: "Cities Grew Fast as People Moved for Work",
+    summary:
+      "As factories spread, many people moved from villages to cities to find jobs. Cities grew quickly, but they often did not have enough housing, clean water, or sanitation.",
+    impact:
+      "City life created new opportunities, but it also brought overcrowding, pollution, and disease. Industrial change was not just about machines. It also changed where and how people lived.",
+    nextStep:
+      "As urban problems grew worse, people began paying more attention to the social costs of industrialization.",
     image: "/timeline/Manchester industrial city 1800s.webp",
-    imageAlt: "View of an industrial city in the 1800s",
+    imageAlt: "An industrial city in the 1800s.",
   },
   {
-    year: "1830s-1840s",
-    category: "Labor",
-    title: "Factory Work Was Harsh and Dangerous",
-    whatHappened:
-      "Many factory workers worked long hours for low pay in unsafe places. Men, women, and children often worked near dangerous machines with little protection.",
-    whyItMatters:
-      "The Industrial Revolution increased production, but many workers did not benefit at first. Harsh factory conditions showed the human cost of industrial growth.",
-    causeEffect:
-      "Factory owners often focused on speed and profit, which led to poor treatment of workers. These conditions led to protests and demands for change.",
+    year: "1830s to 1840s",
+    title: "Factory Work Could Be Harsh and Dangerous",
+    summary:
+      "Many factory workers spent long hours in unsafe conditions for low pay. Men, women, and children often worked around dangerous machines with very little protection.",
+    impact:
+      "This showed that industrial progress came with serious human costs. Even though production increased, many workers did not benefit right away.",
+    nextStep:
+      "As people saw these problems more clearly, they began demanding laws and reforms to protect workers.",
     image: "/timeline/child factory workers industrial revolution.webp",
-    imageAlt: "Historical image of child factory workers",
+    imageAlt: "A historical image of child factory workers.",
   },
   {
     year: "1833",
-    category: "Reform",
-    title: "The Factory Act Began Labor Reform",
-    whatHappened:
-      "In Britain, the Factory Act of 1833 limited the hours some children could work and brought basic inspections to textile mills.",
-    whyItMatters:
-      "This law showed that governments were starting to respond to the worst problems of industrial growth. It was an early step toward protecting workers.",
-    causeEffect:
-      "Concern about child labor and unsafe conditions led to calls for reform. Laws like the Factory Act started to limit factory abuse.",
+    title: "The Factory Act Was an Early Reform Law",
+    summary:
+      "In Britain, the Factory Act of 1833 limited how long some children could work and brought in basic inspections for textile mills.",
+    impact:
+      "This was one of the first signs that government was stepping in to deal with the worst factory abuses. It did not solve every problem, but it was an important beginning.",
+    nextStep:
+      "Later reforms built on laws like this one as pressure for worker protection continued to grow.",
     image: "/timeline/19th century labor movement.webp",
-    imageAlt: "Historical image connected to labor reform",
+    imageAlt: "A historical image connected to labor reform.",
   },
   {
-    year: "1850s-1870s",
-    category: "Global Spread",
+    year: "1850s to 1870s",
     title: "Industrialization Spread Beyond Britain",
-    whatHappened:
-      "The ideas, machines, and factory methods of the Industrial Revolution spread to Belgium, France, Germany, and the United States.",
-    whyItMatters:
-      "Industrialization became a world wide force instead of staying only in Britain. Countries that industrialized built stronger economies, transportation systems, and military power.",
-    causeEffect:
-      "Britains success encouraged other countries to copy factories, railroads, and machine production. This spread changed the balance of power in the modern world.",
+    summary:
+      "The machines, ideas, and factory methods first used in Britain spread to countries such as Belgium, France, Germany, and the United States.",
+    impact:
+      "Industrialization became an international force instead of something limited to one country. Nations that industrialized often gained stronger economies and better transportation systems.",
+    nextStep:
+      "As more countries industrialized, the balance of power in the modern world began to shift.",
     image: "/timeline/industrialization spreads world map.webp",
-    imageAlt: "Map showing the spread of industrialization",
+    imageAlt: "A map showing the spread of industrialization.",
   },
   {
     year: "Late 1800s",
-    category: "Society",
-    title: "A New Industrial Society Emerged",
-    whatHappened:
-      "By the late 1800s, industrial economies had created bigger middle classes, powerful business leaders, and stronger worker groups.",
-    whyItMatters:
-      "The Industrial Revolution changed more than machines. It changed social class, politics, education, and daily life.",
-    causeEffect:
-      "As industry grew, society became more urban, more connected, and more complex. These changes helped shape modern capitalism, labor rights, and public education.",
+    title: "A New Industrial Society Had Taken Shape",
+    summary:
+      "By the late 1800s, industrial economies had created larger middle classes, powerful business leaders, and more organized groups of workers.",
+    impact:
+      "By this point, the Industrial Revolution had changed much more than production. It had reshaped class structure, politics, education, and everyday life.",
+    nextStep:
+      "Its effects lasted far beyond the 1800s and still influence modern work, cities, and technology today.",
     image: "/timeline/19th century labor movement.webp",
-    imageAlt: "Historical image of a nineteenth century labor movement",
+    imageAlt: "A nineteenth century labor movement.",
   },
 ];
 
-const navigationLinks = [
-  { href: "#overview", label: "Overview" },
-  { href: "#timeline", label: "Timeline" },
-  { href: "#connections", label: "Key Connections" },
-  { href: "#conclusion", label: "Conclusion" },
-];
-
-function withoutPunctuation(text: string) {
-  return text
-    .replace(/['’]/g, "")
-    .replace(/[\p{P}]/gu, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function EventCard({ event, index }: { event: TimelineEvent; index: number }) {
+function EventCard({ event }: { event: TimelineEvent }) {
   return (
     <article className="relative md:pl-10">
       <div className="absolute left-0 top-1/2 hidden h-3 w-3 -translate-y-1/2 rounded-full bg-[var(--page-accent)] md:block" />
-      <div className="grid gap-6 rounded-[1.75rem] border border-[var(--page-border)] bg-[var(--page-panel)] p-6 shadow-[0_14px_34px_rgba(31,42,55,0.06)] md:grid-cols-[170px_1fr] md:p-8">
-        <div className="border-b border-[var(--page-border)] pb-4 md:border-b-0 md:border-r md:pb-0 md:pr-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[var(--page-muted)]">
-            {withoutPunctuation("Year")}
-          </p>
-          <p className="mt-3 font-[family:var(--font-display)] text-3xl leading-none text-[var(--page-accent)]">
-            {withoutPunctuation(event.year)}
-          </p>
-          <p className="mt-5 text-xs font-semibold uppercase tracking-[0.24em] text-[var(--page-muted)]">
-            {withoutPunctuation(event.category)}
-          </p>
+      <div className="rounded-[1.75rem] border border-[var(--page-border)] bg-[var(--page-panel)] p-6 shadow-[0_14px_34px_rgba(31,42,55,0.06)] md:p-8">
+        <div className="flex flex-col gap-5 border-b border-[var(--page-border)] pb-5 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[var(--page-accent)]">
+              {event.year}
+            </p>
+            <h3 className="mt-2 font-[family:var(--font-display)] text-3xl leading-tight text-slate-900">
+              {event.title}
+            </h3>
+          </div>
         </div>
 
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--page-accent)]">
-            {withoutPunctuation(`Event ${index + 1}`)}
-          </p>
-          <h3 className="mt-2 font-[family:var(--font-display)] text-2xl leading-tight text-slate-900 md:text-[2rem]">
-            {withoutPunctuation(event.title)}
-          </h3>
-
-          <div className="mt-6 overflow-hidden rounded-[1.4rem] border border-[var(--page-border)] bg-[#f8f4ec]">
-            <div className="grid gap-0 lg:grid-cols-[320px_1fr]">
-              <div className="relative min-h-[220px] border-b border-[var(--page-border)] lg:border-b-0 lg:border-r">
-                <Image
-                  src={event.image}
-                  alt={event.imageAlt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 320px"
-                />
-              </div>
-              <div className="p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--page-muted)]">
-                  {withoutPunctuation("Historical Visual")}
-                </p>
-                <p className="mt-3 text-base leading-7 text-slate-700">
-                  {withoutPunctuation(event.imageAlt)}
-                </p>
-              </div>
+        <div className="mt-6 grid gap-6 lg:grid-cols-[300px_1fr]">
+          <div className="overflow-hidden rounded-[1.35rem] border border-[var(--page-border)] bg-[#f8f4ec]">
+            <div className="relative min-h-[240px]">
+              <Image
+                src={event.image}
+                alt={event.imageAlt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 300px"
+              />
             </div>
+            <p className="border-t border-[var(--page-border)] px-4 py-3 text-sm leading-6 text-slate-600">
+              {event.imageAlt}
+            </p>
           </div>
 
-          <div className="mt-6 grid gap-4 xl:grid-cols-3">
-            <section className="rounded-2xl bg-[#f7f2ea] p-4">
-              <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--page-muted)]">
-                {withoutPunctuation("What Happened")}
-              </h4>
-              <p className="mt-3 text-[1.02rem] leading-7 text-slate-700">
-                {withoutPunctuation(event.whatHappened)}
-              </p>
-            </section>
-
-            <section className="rounded-2xl bg-[#f7f2ea] p-4">
-              <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--page-muted)]">
-                {withoutPunctuation("Why It Matters")}
-              </h4>
-              <p className="mt-3 text-[1.02rem] leading-7 text-slate-700">
-                {withoutPunctuation(event.whyItMatters)}
-              </p>
-            </section>
-
-            <section className="rounded-2xl border border-[#d5c8b2] bg-[#fbf7ef] p-4">
-              <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-[#77562e]">
-                {withoutPunctuation("Cause and Effect")}
-              </h4>
-              <p className="mt-3 text-[1.02rem] leading-7 text-slate-700">
-                {withoutPunctuation(event.causeEffect)}
-              </p>
-            </section>
+          <div className="space-y-4 text-[1.03rem] leading-8 text-slate-700">
+            <p>{event.summary}</p>
+            <p>{event.impact}</p>
+            <p className="rounded-2xl bg-[#f4eee2] px-4 py-4 text-slate-800">{event.nextStep}</p>
           </div>
         </div>
       </div>
@@ -245,226 +181,117 @@ export default function Page() {
     <main className="min-h-screen">
       <header className="border-b border-[var(--page-border)] bg-[#f8f4ec]/95">
         <div className="mx-auto max-w-6xl px-6 py-8 md:px-10 md:py-12">
-          <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--page-accent)]">
-            {withoutPunctuation("Modern World in Motion Project")}
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[var(--page-accent)]">
+            Modern World in Motion
           </p>
 
-          <div className="mt-6 grid gap-8 lg:grid-cols-[minmax(0,1.7fr)_minmax(280px,0.9fr)]">
+          <div className="mt-6 grid gap-8 lg:grid-cols-[minmax(0,1.7fr)_300px]">
             <div>
               <h1 className="max-w-4xl font-[family:var(--font-display)] text-5xl leading-none text-slate-900 md:text-6xl">
-                {withoutPunctuation("The Industrial Revolution")}
+                The Industrial Revolution
               </h1>
               <p className="mt-4 max-w-3xl text-xl leading-8 text-slate-700">
-                {withoutPunctuation(
-                  "How technology factories and city growth changed the modern world from the 1700s through the late 1800s."
-                )}
+                A timeline showing how new machines, factory work, and city growth changed daily
+                life from the 1700s to the late 1800s.
               </p>
-              <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-700">
-                {withoutPunctuation(
-                  "This timeline explains how industrial growth began why it spread and how it changed work transportation cities and daily life. It is organized to make the order of events easy to follow and the main idea easy to understand."
-                )}
-              </p>
-
-              <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                <div className="rounded-2xl border border-[var(--page-border)] bg-[var(--page-panel)] p-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--page-muted)]">
-                    {withoutPunctuation("Time Period")}
-                  </p>
-                  <p className="mt-3 font-[family:var(--font-display)] text-2xl text-slate-900">
-                    {withoutPunctuation("1700s Late 1800s")}
-                  </p>
-                </div>
-
-                <div className="rounded-2xl border border-[var(--page-border)] bg-[var(--page-panel)] p-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--page-muted)]">
-                    {withoutPunctuation("Main Region")}
-                  </p>
-                  <p className="mt-3 font-[family:var(--font-display)] text-2xl text-slate-900">
-                    {withoutPunctuation("Britain First")}
-                  </p>
-                </div>
-
-                <div className="rounded-2xl border border-[var(--page-border)] bg-[var(--page-panel)] p-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--page-muted)]">
-                    {withoutPunctuation("Big Idea")}
-                  </p>
-                  <p className="mt-3 font-[family:var(--font-display)] text-2xl text-slate-900">
-                    {withoutPunctuation("Innovation and Change")}
-                  </p>
-                </div>
+              <div className="mt-6 max-w-4xl space-y-4 text-lg leading-8 text-slate-700">
+                <p>
+                  What stood out most to me while looking at this period is that the Industrial
+                  Revolution was not just about inventions. It changed where people worked, where
+                  they lived, and how governments responded when conditions became unfair or unsafe.
+                </p>
+                <p>
+                  The timeline below follows those changes in order, starting with farming
+                  improvements in Britain and ending with the rise of a new industrial society by
+                  the late 1800s.
+                </p>
               </div>
             </div>
 
-            <aside className="space-y-4 lg:sticky lg:top-6 lg:self-start">
-              <nav className="rounded-[1.75rem] border border-[var(--page-border)] bg-[var(--page-panel)] p-5">
-                <h2 className="font-[family:var(--font-display)] text-2xl text-slate-900">
-                  {withoutPunctuation("On This Page")}
-                </h2>
-                <ul className="mt-4 space-y-3 text-base text-slate-700">
-                  {navigationLinks.map((link) => (
-                    <li key={link.href}>
-                      <a
-                        href={link.href}
-                        className="block rounded-xl border border-transparent px-3 py-2 transition hover:border-[var(--page-border)] hover:bg-[#f2ece2] hover:text-slate-900"
-                      >
-                        {withoutPunctuation(link.label)}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-
-              <section className="rounded-[1.75rem] border border-[var(--page-border)] bg-[var(--page-panel)] p-5">
-                <h2 className="font-[family:var(--font-display)] text-2xl text-slate-900">
-                  {withoutPunctuation("Project Snapshot")}
-                </h2>
-                <dl className="mt-4 space-y-4 text-sm">
-                  <div>
-                    <dt className="font-semibold uppercase tracking-[0.18em] text-[var(--page-muted)]">
-                      {withoutPunctuation("Theme Focus")}
-                    </dt>
-                    <dd className="mt-1 text-base leading-7 text-slate-700">
-                      {withoutPunctuation(
-                        "Industrial growth changed production work and everyday life."
-                      )}
-                    </dd>
-                  </div>
-                  <div>
-                    <dt className="font-semibold uppercase tracking-[0.18em] text-[var(--page-muted)]">
-                      {withoutPunctuation("Historical Argument")}
-                    </dt>
-                    <dd className="mt-1 text-base leading-7 text-slate-700">
-                      {withoutPunctuation(
-                        "New technology helped people make more goods but it also created social problems that led to reform."
-                      )}
-                    </dd>
-                  </div>
-                </dl>
-              </section>
+            <aside className="rounded-[1.75rem] border border-[var(--page-border)] bg-[var(--page-panel)] p-5 lg:self-start">
+              <h2 className="font-[family:var(--font-display)] text-2xl text-slate-900">
+                Quick Notes
+              </h2>
+              <ul className="mt-4 space-y-3 text-base leading-7 text-slate-700">
+                <li>Time period: 1700s to late 1800s.</li>
+                <li>Industrialization began in Britain before spreading to other countries.</li>
+                <li>One major pattern was that each change led to another.</li>
+              </ul>
             </aside>
           </div>
         </div>
       </header>
 
-      <section id="overview" className="scroll-mt-24">
-        <div className="mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-12">
-          <div className="mb-8 max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.26em] text-[var(--page-accent)]">
-              {withoutPunctuation("Overview")}
-            </p>
-            <h2 className="mt-2 font-[family:var(--font-display)] text-4xl text-slate-900">
-              {withoutPunctuation("Why This Period Matters")}
-            </h2>
-          </div>
-
-          <div className="grid gap-6 lg:grid-cols-2">
-            <section className="rounded-[1.75rem] border border-[var(--page-border)] bg-[var(--page-panel)] p-6">
-              <h3 className="font-[family:var(--font-display)] text-3xl text-slate-900">
-                {withoutPunctuation("Theme Focus")}
-              </h3>
-              <p className="mt-4 text-lg leading-8 text-slate-700">
-                {withoutPunctuation(
-                  "The Industrial Revolution was a time of fast change in technology the economy and society. Machines factories and new transportation systems made production faster but they also changed family life work and the growth of cities."
-                )}
-              </p>
-            </section>
-
-            <section className="rounded-[1.75rem] border border-[var(--page-border)] bg-[var(--page-panel)] p-6">
-              <h3 className="font-[family:var(--font-display)] text-3xl text-slate-900">
-                {withoutPunctuation("Historical Argument")}
-              </h3>
-              <p className="mt-4 text-lg leading-8 text-slate-700">
-                {withoutPunctuation(
-                  "The Industrial Revolution changed the modern world because inventions helped people make more goods and connect markets but those same changes also created hard working conditions crowded cities and pressure for reform."
-                )}
-              </p>
-            </section>
-          </div>
+      <section className="mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-12">
+        <div className="max-w-4xl">
+          <h2 className="font-[family:var(--font-display)] text-4xl text-slate-900">
+            Main idea
+          </h2>
+          <p className="mt-4 text-lg leading-8 text-slate-700">
+            The Industrial Revolution changed the modern world because new technology made
+            production faster, but those same changes also created hard working conditions,
+            crowded cities, and pressure for reform.
+          </p>
         </div>
       </section>
 
-      <section id="timeline" className="scroll-mt-24 border-y border-[var(--page-border)] bg-[#f8f5ee]/85">
+      <section className="border-y border-[var(--page-border)] bg-[#f8f5ee]/85">
         <div className="mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-12">
-          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.26em] text-[var(--page-accent)]">
-                {withoutPunctuation("Timeline")}
-              </p>
-              <h2 className="mt-2 font-[family:var(--font-display)] text-4xl text-slate-900">
-                {withoutPunctuation("Major Events in Chronological Order")}
-              </h2>
-            </div>
-
-            <p className="max-w-2xl text-lg leading-8 text-slate-700">
-              {withoutPunctuation(
-                "Each entry explains what happened why it mattered and how one change led to another."
-              )}
+          <div className="max-w-4xl">
+            <h2 className="font-[family:var(--font-display)] text-4xl text-slate-900">
+              Timeline of major changes
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-slate-700">
+              I organized these events in chronological order to show how one development often
+              pushed the next one forward.
             </p>
           </div>
 
           <div className="relative mt-8 space-y-6 md:pl-4">
             <div className="absolute bottom-0 left-[0.7rem] top-0 hidden w-px bg-[#cdd7e0] md:block" />
-            {events.map((event, index) => (
-              <EventCard key={event.title} event={event} index={index} />
+            {events.map((event) => (
+              <EventCard key={event.title} event={event} />
             ))}
           </div>
         </div>
       </section>
 
-      <section id="connections" className="scroll-mt-24">
-        <div className="mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-12">
-          <div className="mb-8 max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.26em] text-[var(--page-accent)]">
-              {withoutPunctuation("Key Connections")}
-            </p>
-            <h2 className="mt-2 font-[family:var(--font-display)] text-4xl text-slate-900">
-              {withoutPunctuation("How the Events Connect")}
+      <section className="mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-12">
+        <div className="grid gap-6 lg:grid-cols-2">
+          <section className="rounded-[1.75rem] border border-[var(--page-border)] bg-[var(--page-panel)] p-6">
+            <h2 className="font-[family:var(--font-display)] text-3xl text-slate-900">
+              Why the events connect
             </h2>
-          </div>
+            <p className="mt-4 text-lg leading-8 text-slate-700">
+              Better farming helped population growth. More workers and new inventions helped
+              factories grow. Factories increased the need for steam power and railroads. As
+              cities expanded and working conditions worsened, people pushed for reform.
+            </p>
+          </section>
 
-          <div className="grid gap-6 lg:grid-cols-2">
-            <section className="rounded-[1.75rem] border border-[var(--page-border)] bg-[var(--page-panel)] p-6">
-              <h3 className="font-[family:var(--font-display)] text-3xl text-slate-900">
-                {withoutPunctuation("Earlier Changes Led to Later Developments")}
-              </h3>
-              <ul className="mt-5 space-y-3 text-lg leading-8 text-slate-700">
-                <li>{withoutPunctuation("Better farming supported population growth and created more available workers.")}</li>
-                <li>{withoutPunctuation("New machines helped factories replace work done by hand.")}</li>
-                <li>{withoutPunctuation("Factories created more demand for steam power mining and transportation.")}</li>
-                <li>{withoutPunctuation("Railroads linked resources factories ports and markets faster.")}</li>
-                <li>{withoutPunctuation("City growth and harsh working conditions increased pressure for reform.")}</li>
-              </ul>
-            </section>
-
-            <section className="rounded-[1.75rem] border border-[var(--page-border)] bg-[var(--page-panel)] p-6">
-              <h3 className="font-[family:var(--font-display)] text-3xl text-slate-900">
-                {withoutPunctuation("Why the Industrial Revolution Still Matters")}
-              </h3>
-              <ul className="mt-5 space-y-3 text-lg leading-8 text-slate-700">
-                <li>{withoutPunctuation("Modern factory systems and mass production began during this time.")}</li>
-                <li>{withoutPunctuation("Transportation networks grew because industry depended on them.")}</li>
-                <li>{withoutPunctuation("Labor laws and workplace protections developed in response to abuse.")}</li>
-                <li>{withoutPunctuation("Modern capitalism city life and social classes were shaped by it.")}</li>
-                <li>{withoutPunctuation("New technology still creates similar benefits and social challenges today.")}</li>
-              </ul>
-            </section>
-          </div>
+          <section className="rounded-[1.75rem] border border-[var(--page-border)] bg-[var(--page-panel)] p-6">
+            <h2 className="font-[family:var(--font-display)] text-3xl text-slate-900">
+              Why it still matters
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-slate-700">
+              A lot of the modern world still reflects this period. Factory systems, rail networks,
+              labor laws, and even debates about how technology changes everyday life can all be
+              traced back to the Industrial Revolution.
+            </p>
+          </section>
         </div>
       </section>
 
-      <section id="conclusion" className="scroll-mt-24 border-t border-[var(--page-border)] bg-[#f8f4ec]/80">
+      <section className="border-t border-[var(--page-border)] bg-[#f8f4ec]/80">
         <div className="mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-12">
           <div className="rounded-[1.75rem] border border-[var(--page-border)] bg-[var(--page-panel)] p-6 md:p-8">
-            <p className="text-sm font-semibold uppercase tracking-[0.26em] text-[var(--page-accent)]">
-              {withoutPunctuation("Conclusion")}
-            </p>
-            <h2 className="mt-2 font-[family:var(--font-display)] text-4xl text-slate-900">
-              {withoutPunctuation("Industrialization Changed More Than Machines")}
+            <h2 className="font-[family:var(--font-display)] text-4xl text-slate-900">
+              Conclusion
             </h2>
             <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-700">
-              {withoutPunctuation(
-                "The Industrial Revolution changed the modern world by changing production transportation cities and social classes. It created new wealth and new technology but it also exposed inequality and pushed societies to respond with reform. Its effects can still be seen in factories labor systems transportation networks and the way technology continues to change everyday life."
-              )}
+              Overall, the Industrial Revolution changed much more than the way goods were made.
+              It reshaped work, transportation, cities, and social class. It brought progress, but
+              it also created new problems, which is why this period is still important to study.
             </p>
           </div>
         </div>
