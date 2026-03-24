@@ -1,26 +1,44 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --page-paper: #f4efe6;
+  --page-panel: rgba(252, 250, 246, 0.94);
+  --page-accent: #274c6b;
+  --page-accent-soft: #d8e3ee;
+  --page-border: #d3ccbf;
+  --page-text: #1f2a37;
+  --page-muted: #5d6b79;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.5), transparent 18%),
+    linear-gradient(180deg, #f7f3eb 0%, var(--page-paper) 100%);
+  color: var(--page-text);
+  font-family: var(--font-body), sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(39, 76, 107, 0.05), transparent 22%),
+    linear-gradient(180deg, rgba(39, 76, 107, 0.04), transparent 24%);
+  opacity: 0.8;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(39, 76, 107, 0.18);
 }
